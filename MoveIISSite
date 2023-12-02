@@ -1,0 +1,13 @@
+Move IIS Sites and App Pools to New server / Migrate app pools and sites to new server...
+
+#Export 
+%windir%\system32\inetsrv\appcmd list apppool /config /xml > c:\temp\apppools.xml
+%windir%\system32\inetsrv\appcmd list site /config /xml > c:\temp\sites.xml
+
+
+#Import
+%windir%\system32\inetsrv\appcmd add apppool /in < c:\temp\apppools.xml
+%windir%\system32\inetsrv\appcmd add site /in < c:\temp\sites.xml
+
+
+
